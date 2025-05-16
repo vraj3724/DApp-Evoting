@@ -1,74 +1,116 @@
-# evoting-dapp
-This is an E-Voting Decentralised Application
+# 🗳️ E-Voting DApp – Blockchain-Based Voting Platform
 
-# Getting Started with Create React App
+**E-Voting DApp** is a decentralized electronic voting system built on the Ethereum blockchain using **React**, **Solidity**, and **ethers.js**. It enables users to cast votes securely and view all voting records with transparency and immutability guaranteed by blockchain technology.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- 🗳️ Secure vote submission using MetaMask
+- 🧑‍💼 Register voters by name and ID
+- ✅ One vote per voter (double voting prevention)
+- 📊 View all voter details and transaction hashes
+- 🔍 Transparent vote audit via Etherscan links
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🧱 Smart Contract Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The Solidity smart contract includes the following key functions:
 
-### `npm test`
+- `vote(name, voterId, candidate)`: Casts a vote
+- `updateTxHash(voterId, txHash)`: Stores transaction hash after voting
+- `getVoterDetails(voterId)`: Returns voter details and vote status
+- `getAllVoterIds()`: Lists all voter IDs
+- `getCandidates()`: Lists all candidates
+- `votesReceived(candidate)`: Total votes per candidate
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Deployed to:  
+**Sepolia Testnet Address**: `0x69361eCc26820703aB0c1eF116d05b2e05db07d0`
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🖥️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Layer       | Tech                            |
+|-------------|----------------------------------|
+| Frontend    | React.js                         |
+| Styling     | CSS                              |
+| Blockchain  | Solidity, Ethereum (Sepolia)     |
+| Web3        | ethers.js                        |
+| Routing     | React Router                     |
+| Wallet      | MetaMask                         |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📂 Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+DApp-Evoting/
+├── App.js                   # Main routing and logic
+├── index.js                 # React root file
+├── VotingABI.json           # Contract ABI
+├── VoterTable.js            # Table UI for displaying voters
+├── VoterTablePage.js        # Wrapper page for table
+├── App.css / index.css      # Styling files
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🧪 Component Overview
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **App.js** – Loads contract, handles voting, fetches voter list
+- **VoterTable.js** – Displays list of all voters and their votes
+- **VoterTablePage.js** – Wrapper route for viewing all votes
+- **VotingABI.json** – Contains the smart contract's ABI
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔧 How to Run Locally
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
+- Node.js and npm
+- MetaMask extension
+- Sepolia testnet ETH (get from faucet)
 
-### Code Splitting
+### Steps
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+git clone https://github.com/vraj3724/DApp-Evoting.git
+cd DApp-Evoting
+npm install
+npm start
+```
 
-### Analyzing the Bundle Size
+Then visit: [http://localhost:3000](http://localhost:3000)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🛠 Smart Contract Deployment (via Remix)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Go to [Remix IDE](https://remix.ethereum.org)
+2. Paste and compile your Solidity contract
+3. Deploy using **Injected Web3** (MetaMask)
+4. Copy deployed contract address
+5. Update `CONTRACT_ADDRESS` in `App.js`
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📈 Potential Future Enhancements
 
-### Deployment
+- 🛡️ Admin panel to manage candidates
+- 📋 Voter eligibility verification
+- 🧾 IPFS for candidate profile storage
+- 📱 Mobile optimization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 🤝 Contributors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Vraj Patel (https://github.com/vraj3724)
 
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
